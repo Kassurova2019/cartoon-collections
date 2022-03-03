@@ -15,16 +15,22 @@ end
    
 
 def long_planeteer_calls(calls_long)
- calls_long.each do |call|
-  if call.length == 4 || call.length < 4 
-    false
-  else 
-    true
-  end
-end
+
+  calls_long.any? {|call| call.length > 4}
+#  calls_long.each do |call|
+#   if call.length == 4 || call.length < 4 
+#     false
+#   else 
+#     true
+#   end
+# end
 end
 
-def find_the_cheese# code an argument here
-  # the array below is here to help
+def find_the_cheese(cheese)
+
   cheese_types = ["cheddar", "gouda", "camembert"]
+
+  cheese.find do |element|
+    cheese_types.include?(element)
+  end
 end
